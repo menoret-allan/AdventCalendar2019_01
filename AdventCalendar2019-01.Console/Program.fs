@@ -1,6 +1,4 @@
-﻿// Learn more about F# at http://fsharp.org
-
-open AdventCalendar2019_01.Core.SpaceUtils
+﻿open AdventCalendar2019_01.Core.SpaceUtils
 
 [<EntryPoint>]
 let main argv =
@@ -8,5 +6,10 @@ let main argv =
         System.IO.File.ReadLines("input.txt")
         |> Seq.map(int)
         |> Seq.sumBy CalculateFullRequire
-    printfn "result: %i" result
+    printfn "result part 1: %i" result
+    let result =
+        System.IO.File.ReadLines("input.txt")
+        |> Seq.map(int)
+        |> Seq.sumBy CalculateFullRequirePart2
+    printfn "result part 2: %i" result
     0 // return an integer exit code
